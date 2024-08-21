@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Development script: bisect a git repository to find the first broken commit
 # since the last known good version.

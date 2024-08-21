@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Populate a few source control directories. If they exist, they'll be used
 # instead of source tarballs. (Note: if you want to apply patches you'll have

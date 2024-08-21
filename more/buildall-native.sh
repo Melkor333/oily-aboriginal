@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Run a native build with a control image for every architecture,
 # using existing system-images under build, saving log files to build/log,

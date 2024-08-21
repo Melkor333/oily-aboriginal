@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # List the commands used to build each architecture.
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Wrapper around dev-environment.sh which runs an automated native build
 # using a control image, and sets up an FTP server on the host to upload

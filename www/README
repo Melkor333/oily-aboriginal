@@ -59,7 +59,7 @@ Aboriginal Linux: We cross compile so you don't have to.
 
   Aboriginal Linux is also designed to document how to bootstrap minimal
   Linux development environments for a new target.  The build is a series of
-  bash scripts, with lots of comments explaining what they do.  These scripts
+  shell scripts, with lots of comments explaining what they do.  These scripts
   show how to make a cross compiler (and optionally how to use it to make
   a better cross compiler), how to build a root filesystem and native
   development tools, and how to package and boot the result under an emulator.

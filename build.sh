@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Run all the steps needed to build a system image from scratch.
 

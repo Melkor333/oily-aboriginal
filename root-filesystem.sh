@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Build a basic busybox+uClibc root filesystem for a given target.
 

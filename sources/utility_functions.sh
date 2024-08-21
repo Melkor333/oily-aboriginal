@@ -48,7 +48,7 @@ dotprogress()
   x=0
   while read i
   do
-    x=$[$x + 1]
+    x=$((x + 1))
     if [[ "$x" -eq 25 ]]
     then
       x=0

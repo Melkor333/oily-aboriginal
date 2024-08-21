@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Run native build out of build directory, using host-tools.sh if
 # available.

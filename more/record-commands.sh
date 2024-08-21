@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 source sources/include.sh || exit 1
 
 # Build a wrapper that records each command line the build runs out of the
 # host's $PATH, so we know exactly what commands the build uses.
 
-# (Note: this misses things called via absolute paths, such as the #!/bin/bash
+# (Note: this misses things called via absolute paths, such as the #!/usr/bin/env osh
 # at the start of shell scripts.)
 
 echo "=== Setting up command recording wrapper"

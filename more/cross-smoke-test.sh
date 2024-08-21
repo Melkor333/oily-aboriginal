@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Perform a smoke test on a target's cross compiler by building "hello world"
 # and attempting to run it under QEMU application emulation.

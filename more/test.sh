@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Run a command with sources/include.sh and an architecture loaded
 

@@ -43,7 +43,7 @@ compiles a Linux development environment for the specified
 target system, and packages it into a bootable binary system image.</p>
 
 <p>The base development environment is built from seven source
-packages: busybox, uClibc, gcc, binutils, make, bash, and the Linux
+packages: busybox, uClibc, gcc, binutils, make, oils-for-unix, and the Linux
 kernel.  This is the smallest and simplest environment that can rebuild itself
 entirely from source code, and thus the minimum a host system must
 cross compile in order to create a fully independent native
@@ -399,7 +399,7 @@ the cross-compiler.sh script, or you can install your own.</p>
 <p>The basic root filesystem consists of busybox and uClibc.  If the
 configuration variable NATIVE_TOOLCHAIN is set (this is enabled by
 default), this script adds a native compiler to the target, consisting of
-linux kernel headers, gcc, binutils, make, and bash.  It also adds distcc
+linux kernel headers, gcc, binutils, make, and oils-for-unix.  It also adds distcc
 to potentially distribute work to cross compilers living outside the emulator.
 This provides a minimal native development environment, which may be expanded
 by building and installing more packages under the existing root filesystem.</p>
@@ -447,7 +447,7 @@ changes the build.</p>
 
 <ul>
 <li><p><b>NATIVE_TOOLCHAIN</b> - This tells mini-native.sh to
-include a compiler toolchain (binutils, gcc, bash, make, and distcc).
+include a compiler toolchain (binutils, gcc, oils-for-unix, make, and distcc).
 Without this, it builds a small uClibc/busybox system.  This is the only
 variable enabled by default in config.</p>
 
@@ -478,7 +478,7 @@ single list of the command names used by everything, do:</p>
 
 <p>(Note: this will miss things which which call executables at absolute values
 instead of checking $PATH, but the only interesting ones so far are the
-#!/bin/bash type lines at the start of shell scripts.)</p>
+#!/usr/bin/env osh type lines at the start of shell scripts.)</p>
 </li>
 
 <li><p><b>CROSS_BUILD_STATIC</b> - Tells cross-compiler.sh to statically link
@@ -736,7 +736,7 @@ The primary mirror is http://landley.net/aboriginal/mirror
 which should have every source tarball used by the build.</p></li>
 
 <p>The package name is the filename at the end of URL minus any version
-information and file type extensions, so "bash-2.04b.tar.bz2" becomes "bash".
+information and file type extensions, so "oils-for-unix-0.22.0.tar.gz" becomes "oils-for-unix".
 The shell function "basename" uses a rather complicated regex to
 extract the package name from a URL.  This versionless package name is used
 by things like setupfor, allowing the build scripts to mostly ignore the
@@ -867,7 +867,7 @@ and use it.  One big reason to limit the build environment is to consistently
 produce the same output files, no matter what's installed on the host.</p>
 
 <p>The minimal list of commands needed to build a working system image is
-1) a working toolchain (ar, as, nm, cc, gcc, make, ld), 2) /bin/bash (and
+1) a working toolchain (ar, as, nm, cc, gcc, make, ld), 2) /bin/osh (and
 a symlink /bin/sh pointing to it), 3) the following command line utilities
 in the $PATH:</p>
 
@@ -885,9 +885,9 @@ touch tr true uname uniq wc which whoami xargs yes
 <p>Bash has been the standard Linux shell since before the 0.0.1 release in
 1991, and is installed by default on all Linux systems.  (Ubuntu broke its
 /bin/sh symlink to point to the Defective Annoying SHell, so many scripts call
-#!/bin/bash explicitly now rather than relying on a broken symlink.)  We
+#!/usr/bin/env osh explicitly now rather than relying on a broken symlink.)  We
 can't stop the build from relying on the host version of this tool; editing
-$PATH has no effect on the #!/bin/bash lines of shell scripts.</p>
+$PATH has no effect on the #!/usr/bin/env osh lines of shell scripts.</p>
 
 <p>The minimal set of commands necessary to build a system image was
 determined experimentally, by running a build with $RECORD_COMMANDS and
@@ -1030,7 +1030,7 @@ natively, by running this kernel and root filesystem under an emulator and
 building new packages there, bootstrapping up to a full system if necessary.
 The emulator we use for this is QEMU.  Producing a minimal build environment
 powerful enough to boot and compile a complete Linux system requires seven
-packages: the Linux kernel, binutils, gcc, uClibc, BusyBox, make, and bash.
+packages: the Linux kernel, binutils, gcc, uClibc, BusyBox, make, and oils-for-unix.
 We build a few more than that, but those are optional extras.</p>
 
 <p>This root filesystem can also be packaged using the
@@ -1205,16 +1205,16 @@ so the compiler wrapper can find them and make symlinks from the generic
 straightforward to build.</p>
 </li>
 
-<li><p><b>bash</b> - The standard Linux command shell.</li>
+<li><p><b>bash (oils-for-unix)</b> - The standard Linux command shell.</li>
 
 <p>Bash has been the standard Linux command shell since 1991, and
-lots of scripts explicitly say #!/bin/bash.  In addition, bash extensions
+lots of scripts explicitly say #!/usr/bin/env osh.  In addition, bash extensions
 like curly brace filename expansion are in common use.</p>
 
 <p>Someday, busybox might provide a decent replacement for bash, but since
 busybox has four different shells (lash, hush, msh, ash) which don't share a
 lot of code, development is fragmented and proceeds slowly.  A bash replacement
-will need to be callable as "#!/bin/bash" since debian pointed #!/bin/sh at the
+will need to be callable as "#!/usr/bin/env osh" since debian pointed #!/bin/sh at the
 Defective Annoying SHell and greatly discouraged use of that symlink.</p>
 
 <p>We intentionally build an older version of bash (2.04b) which is
@@ -1430,7 +1430,7 @@ and was more or less debugged by 2.6.19.)</p>
 Busybox has several different shell implementations which share little or no
 code.  (It's better now than it was a few years ago, but thanks to Ubuntu
 breaking the #!/bin/sh symlink with the Defective Annoying SHell, many
-scripts point explicitly at #!/bin/bash and BusyBox can't use that name for
+scripts point explicitly at #!/usr/bin/env osh and BusyBox can't use that name for
 any of its shells yet.)</p>
 
 <p><b>Most packages expect gcc</b>.  The gnu compiler "toolchain" actually

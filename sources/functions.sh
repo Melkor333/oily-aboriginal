@@ -307,7 +307,7 @@ Built on $(date +%F) from:
     Binutils (http://www.gnu.org/software/binutils/) $(identify_release binutils)
     GCC (http://gcc.gnu.org) $(identify_release gcc-core)
     gmake (http://www.gnu.org/software/make) $(identify_release make)
-    bash (ftp://ftp.gnu.org/gnu/bash) $(identify_release bash)
+    oils-for-unix (https://www.oilshell.org/) $(identify_release oils-for-unix)
 
   Optional packages:
     distcc (http://distcc.samba.org) $(identify_release distcc)
@@ -384,7 +384,7 @@ hosttools_path()
   while [ -e "$HOSTTOOLS/fallback-$X" ]
   do
     echo -n ":$HOSTTOOLS/fallback-$X"
-    X=$[$X+1]
+    X=$((X+1))
   done
 }
 

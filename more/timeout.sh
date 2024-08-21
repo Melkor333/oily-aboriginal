@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Run a command line with a hang timeout, which kills the child process if it
 # doesn't produce a new line of output for $1 seconds.

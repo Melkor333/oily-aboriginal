@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Wrapper around run-emulator.sh that sets up a reasonable development
 # environment.

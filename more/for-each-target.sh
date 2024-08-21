@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Iterate through every target architecture, running rest of command line
 # on each $TARGET.

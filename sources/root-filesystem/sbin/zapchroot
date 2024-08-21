@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Copyright 2010 Rob Landley <rob@landley.net> licensed under GPLv2
 

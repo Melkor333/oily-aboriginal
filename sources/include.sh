@@ -19,7 +19,7 @@ source sources/variables.sh
 # Create files with known permissions
 umask 022
 
-# Tell bash not to cache the $PATH because we modify it.  (Without this, bash
+# Tell oils not to cache the $PATH because we modify it.  (Without this, oils
 # won't find new executables added after startup.)
 set +h
 

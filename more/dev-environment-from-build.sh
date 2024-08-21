@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Run development environment out of build directory, using host-tools.sh if
 # available.

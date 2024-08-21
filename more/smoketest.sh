@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # This script compiles stuff under the final system, using distcc to call out
 # to the cross compiler.  It calls run-from-build with a here document.

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 if [ ! -d "$1" ]
 then

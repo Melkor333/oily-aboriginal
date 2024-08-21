@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Run smoketest script on every build/system-image-* architecture.
 

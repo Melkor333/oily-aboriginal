@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Take 80x25 screen shot from the end of a text file, and excape it for html.
 

@@ -135,7 +135,7 @@
 # for the whole build if you know ahead of time which package is going to
 # break.) Non-parallel builds give a more intelligent log output.
 
-# export DEBUG_PACKAGE=bash,busybox
+# export DEBUG_PACKAGE=oils-for-unix,busybox
 
 # This isn't actually one of our variables, but a number of packages listen
 # to this to add extra debug info to their binaries. (Use with SKIP_STRIP)

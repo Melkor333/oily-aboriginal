@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 . sources/utility_functions.sh || exit 1
 

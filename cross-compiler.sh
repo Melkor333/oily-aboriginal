@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Build a more advanced cross compiler, including thread support and uClibc++,
 # built --with-shared (which produces libgcc_s.so), statically linked

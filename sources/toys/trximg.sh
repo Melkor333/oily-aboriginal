@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Create a TRX image from up to three source files (kernel, initramfs, rootfs),
 # and output it to stdout.  (This is the format you flash linksys routers with.)

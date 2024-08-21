@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Build every target architecture, saving log files to build/log.
 # If $FORK is set, build them in parallel.

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Combine a root filesystem directory and a control image into an $ARCH-specific
 # chroot containing native build control files, suitable for chrooting into.

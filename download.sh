@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Download all the source tarballs we haven't got up-to-date copies of.
 
@@ -29,7 +29,7 @@ URL=http://www.musl-libc.org/releases/musl-1.1.12.tar.gz \
 SHA1=e098ce88e7dd4398c178240b4c380771c5b4fe6b \
 maybe_fork "download || dienow"
 
-URL=ftp://kernel.org/pub/linux/kernel/v4.x/linux-4.3.tar.gz \
+URL=https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.3.tar.gz \
 SHA1=309d9bedd8c9ef4a79695f04dcf65c0b551d784c \
 maybe_fork "download || dienow"
 
@@ -64,7 +64,7 @@ maybe_fork "download || dienow"
 
 # Building a native root filesystem requires linux and uClibc (above) plus
 # BusyBox.  Adding a native toolchain requires binutils and gcc (above) plus
-# make and bash.
+# make and oils.
 
 URL=http://landley.net/toybox/downloads/toybox-0.6.1.tar.gz \
 SHA1=7bdf7253d5a5dbf7073e8f5ca0999a7928a63dae \
@@ -78,12 +78,10 @@ URL=ftp://ftp.gnu.org/gnu/make/make-3.81.tar.bz2 \
 SHA1=41ed86d941b9c8025aee45db56c0283169dcab3d \
 maybe_fork "download || dienow"
 
-# This version of bash is ancient, but it provides everything most package
-# builds need and is less than half the size of current versions.  Eventually,
-# either busybox ash or toysh should grow enough features to replace bash.
+# Replaced bash with oils-for-unix
 
-URL=http://ftp.gnu.org/gnu/bash/bash-2.05b.tar.gz \
-SHA1=b3e158877f94e66ec1c8ef604e994851ee388b09 \
+URL=https://www.oilshell.org/download/oils-for-unix-0.22.0.tar.gz \
+SHA1=ab636c778826047642d533d61d0251ef2dcf1849 \
 maybe_fork "download || dienow"
 
 # These are optional parts of the native root filesystem.

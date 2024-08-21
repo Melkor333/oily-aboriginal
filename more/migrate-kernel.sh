@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Calculate new config for ALT kernel based on stable kernel config.
 # I.E. calculate miniconfig-alt-linux based on miniconfig-linux for a target.

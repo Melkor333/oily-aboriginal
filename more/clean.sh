@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Delete all the target stages, to force them to rebuild next build.sh.
 

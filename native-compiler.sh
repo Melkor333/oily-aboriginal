@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Build a compiler for a given target, using one or more existing simple
 # cross compilers.
@@ -50,13 +50,12 @@ then
 
   [ -z "$NO_CPLUSPLUS" ] && build_section uClibc++
 
-  # For a native compiler, build make, bash, and distcc.  (Yes, this is an old
-  # version of Bash.  It's intentional.)
+  # For a native compiler, build make, oils-for-unix, and distcc.
 
   if [ -z "$TOOLCHAIN_PREFIX" ]
   then
     build_section make
-    build_section bash
+    build_section oils-for-unix
     build_section distcc
     cp "$SOURCES/toys/hdainit.sh" "$STAGE_DIR/../init" &&
     mv "$STAGE_DIR"/{man,share/man} || dienow

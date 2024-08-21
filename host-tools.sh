@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env osh
 
 # Set up a known host environment, providing known versions of all required
 # prerequisites, built from source.
